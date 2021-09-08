@@ -15,7 +15,7 @@
 
 ## 주요 구현 장면
 
-### 1. 블루투스 스캔 /  드래그 기능(UIPanGesture) (CoreBluetooth / RxSwift)
+### 1. 블루투스 스캔 / 뷰 드래그 기능(UIPanGesture) (CoreBluetooth / RxSwift)
 ![blescan](https://user-images.githubusercontent.com/42457589/132497623-40bbe259-23c9-4a7c-8e85-2cae8aebfa52.gif)
 
 ### 2. 블루투스 패킷전송 / Wifi 패킷전송 / 애니메이션으로 완료 표현 (CoreBluetooth, CocoaMQTT)
