@@ -18,17 +18,30 @@
 ## 주요 구현 장면
 
 ### 1. 블루투스 스캔(CoreBluetooth) / ioT 기기 검색 기능
-![blescan](https://user-images.githubusercontent.com/42457589/132497623-40bbe259-23c9-4a7c-8e85-2cae8aebfa52.gif)
+
+![tars1-1](https://user-images.githubusercontent.com/42457589/142857905-09f62219-ce27-45f1-bd23-16f4aea46645.gif)
+![tars1-2](https://user-images.githubusercontent.com/42457589/142857909-c24dd7f7-c5b5-4008-96c2-bc36c5b1677d.gif)
+
   
-### 2. 블루투스  / Wifi 제어 기능
-![sendPacket](https://user-images.githubusercontent.com/42457589/132497622-a3af1e94-81d4-4090-8e30-e642fa94a709.gif)
+### 2. 디바이스 이름 설정
+![tars2](https://user-images.githubusercontent.com/42457589/142857940-f8f76369-46c6-4176-a7bd-ee9929f32f34.gif)
+
   
-### 3. 디바이스 이름변경 및 저장 (sqlite)
-![change_dname](https://user-images.githubusercontent.com/42457589/132497612-7337b7d4-b8d2-4dc8-88d3-5b5ceb332306.gif)
+### 3. 디바이스 커스텀 동작 설정
+![tars3](https://user-images.githubusercontent.com/42457589/142857978-4e463a15-39c0-4de6-8078-edbd56deca24.gif)
+
   
-### 4. 동작 이름 변경 및 추가  / 색상 및 아이콘 선택 / 
-![change_aname](https://user-images.githubusercontent.com/42457589/132497626-9e4a1661-9c82-4d9c-9229-4aed6651b401.gif)
+### 4. 디바이스 동작
+![tars4-1](https://user-images.githubusercontent.com/42457589/142858015-625483aa-48f9-4769-b094-620b72802e23.gif)
+![tars4-2](https://user-images.githubusercontent.com/42457589/142858027-02474ac1-905e-4534-9366-c1363b270c1d.gif)
+
   
-### 5. 원하는 동작 설정 기능 / 
+### 5. Wifi Hub 연결
+![tars5-1](https://user-images.githubusercontent.com/42457589/142858107-b463c211-c97f-4d0f-a663-779841bc8280.gif)
+![tars5-2](https://user-images.githubusercontent.com/42457589/142858122-3ee74cee-a324-4bfc-8caa-da52961f3f86.gif)
+
+### 6. 단축 동작
+![tars6-1](https://user-images.githubusercontent.com/42457589/142858211-660d8ad1-f1ef-43d8-8a5c-ae1d96c2a7d2.gif)
+![tars6-2](https://user-images.githubusercontent.com/42457589/142858218-f0bb8b53-e962-4a3d-97ec-85c1ec2af73e.gif)
 
 
