@@ -34,7 +34,7 @@ Ble 스캔을 통해 디바이스를 검색하고 등록한다.
 ### 2. 디바이스 동작
 ![tars4-1](https://user-images.githubusercontent.com/42457589/142858015-625483aa-48f9-4769-b094-620b72802e23.gif)
 ![tars4-2](https://user-images.githubusercontent.com/42457589/142858027-02474ac1-905e-4534-9366-c1363b270c1d.gif)  
-디바이스를 원하는 동작을 하게 설정하여 동작시킨다.
+설정한 액션을 시킨다.
   
 ### 3. 디바이스 이름 설정
 ![tars2](https://user-images.githubusercontent.com/42457589/142857940-f8f76369-46c6-4176-a7bd-ee9929f32f34.gif)  
