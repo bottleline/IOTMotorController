@@ -99,12 +99,12 @@ hub 등록이 되면 hub를 통해 iot 기기와 스마트폰간 wifi 통신이 
 숏컷 아이콘을 만들어 번거롭게 손가락을 움직이는 횟수를 줄인다.
 
 ### 1
-```
+``` 
 1. Capabilites 에 Siri 추가
 ```
 
 ### 2
-```
+``` swift
 // 2. Scene Delegate 에 추가
 //Tells the delegate to handle the specified Handoff-related activity.
 
@@ -117,7 +117,7 @@ func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
 ```
 
 ### 3
-```
+``` swift
 func shortcut(){
         //Key moment 저장
         let activity = NSUserActivity(activityType: "kr.kevin.ioT.Excute") // NSUserActivity 를 생성하여 실행되는 순간을 포착함
