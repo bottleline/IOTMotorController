@@ -33,13 +33,39 @@
 ``` swift
 //구현 로직 설명
 
-디바이스 스캔시작/////////////////////////////////////////
- centralManager.scanForPeripherals(withServices: nil) // 
- ///////////////////////////////////////////////////////
- .
- .
- .
- 
+ // 1. 디바이스 스캔시작 
+ centralManager.scanForPeripherals(withServices: nil) 
+
+``` 
+``` swift
+ // 2. 디바이스 발견시 응답 패킷 요청 
+ func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
+     guard let charactistics = service.characteristics else{return}
+     if charactistic.uuid == notiUUID{
+                peripheral.setNotifyValue(true, for: charactistic) // notifiying 서비스를 구독하여 iot 기기에서 변경된 값을 감시
+            }else if charactistic.uuid == writeUUID{
+                if !registDevice{
+                    peripheral.writeValue(deviceDataList![n].messege) // 응답을 요청하느 패킷 발송
+                }
+            }
+      }
+ }
+
+``` 
+``` swift
+// 2. 응답패킷 수신 
+ func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
+        switch characteristic.uuid{
+        
+        case notiUUID:
+            let string = String(data: characteristic.value ?? "error".data(using: .utf8)!,encoding: String.Encoding.utf8) ?? "error"
+            if string == "success"{
+              registDB(peripheral) // DB 에 peripheral 디바이스의 ADV 패킷에서 전송한 디바이스 고유번호를 저장
+            }
+        default:
+            print("Unhandled Charactistic UUID: \(characteristic.uuid)")
+        }
+    }
 ```
 
 Ble 스캔을 통해 디바이스를 검색하고 등록한다.
