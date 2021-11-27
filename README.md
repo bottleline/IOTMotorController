@@ -118,18 +118,6 @@ func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
 
 ### 3
 ```
-// 2. Scene Delegate 에 추가
-//Tells the delegate to handle the specified Handoff-related activity.
-
-func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
-        if let vc = window?.rootViewController as? ViewController{
-            vc.shortcut() // 숏컷으로 실행할 메소드 추가
-        }
-        
-    }
-```
-### 4
-```
 func shortcut(){
         //Key moment 저장
         let activity = NSUserActivity(activityType: "kr.kevin.ioT.Excute") // NSUserActivity 를 생성하여 실행되는 순간을 포착함
