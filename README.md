@@ -29,6 +29,7 @@
 ![tars1-1](https://user-images.githubusercontent.com/42457589/142857905-09f62219-ce27-45f1-bd23-16f4aea46645.gif)
 ![tars1-2](https://user-images.githubusercontent.com/42457589/142857909-c24dd7f7-c5b5-4008-96c2-bc36c5b1677d.gif)  
 
+### 1
 ``` swift
 //구현 로직 설명
 
@@ -36,6 +37,7 @@
  centralManager.scanForPeripherals(withServices: nil) 
 
 ``` 
+### 2
 ``` swift
  // 2. 디바이스 발견시 응답 패킷 요청 
  func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
@@ -51,6 +53,7 @@
  }
 
 ``` 
+### 3
 ``` swift
 // 3. 응답패킷 수신 
  func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
@@ -94,5 +97,58 @@ hub 등록이 되면 hub를 통해 iot 기기와 스마트폰간 wifi 통신이 
 ![tars6-1](https://user-images.githubusercontent.com/42457589/142858211-660d8ad1-f1ef-43d8-8a5c-ae1d96c2a7d2.gif)
 ![tars6-2](https://user-images.githubusercontent.com/42457589/142858218-f0bb8b53-e962-4a3d-97ec-85c1ec2af73e.gif)  
 숏컷 아이콘을 만들어 번거롭게 손가락을 움직이는 횟수를 줄인다.
+
+### 1
+```
+1. Capabilites 에 Siri 추가
+```
+
+### 2
+```
+// 2. Scene Delegate 에 추가
+//Tells the delegate to handle the specified Handoff-related activity.
+
+func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+        if let vc = window?.rootViewController as? ViewController{
+            vc.shortcut() // 숏컷으로 실행할 메소드 추가
+        }
+        
+    }
+```
+
+### 3
+```
+// 2. Scene Delegate 에 추가
+//Tells the delegate to handle the specified Handoff-related activity.
+
+func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+        if let vc = window?.rootViewController as? ViewController{
+            vc.shortcut() // 숏컷으로 실행할 메소드 추가
+        }
+        
+    }
+```
+### 4
+```
+func shortcut(){
+        //Key moment 저장
+        let activity = NSUserActivity(activityType: "kr.kevin.ioT.Excute") // NSUserActivity 를 생성하여 실행되는 순간을 포착함
+        
+        activity.title = "동작실행하기" // user activity 타이틀 지정
+        
+        //프로퍼티를 활성화하여 객체를 사용할수 있는 작업을 구성
+        activity.isEligibleForSearch = true // activity 검색 가능 여부
+        activity.isEligibleForPrediction = true // activity 예측 가능 여부
+        activity.isEligibleForHandoff = true // activity handoff 기능 지원 여부
+        activity.isEligibleForPublicIndexing = true
+        
+        activity.resignCurrent()
+        
+        self.userActivity = activity
+        self.userActivity?.becomeCurrent() // useractivity 객체를 시스템에 등록한다.
+
+        self.excute(2, 0) // 지정한 동작을 실행
+    }
+```
 
 
