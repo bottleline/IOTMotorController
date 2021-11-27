@@ -11,7 +11,6 @@
 
 ## 사용한 기술
 - `Swift 5`, `Xcode 12`
-- `RxSwift`
 - `CocoaMQTT`
 - `CoreBluetooth`
 
@@ -30,6 +29,19 @@
 
 ![tars1-1](https://user-images.githubusercontent.com/42457589/142857905-09f62219-ce27-45f1-bd23-16f4aea46645.gif)
 ![tars1-2](https://user-images.githubusercontent.com/42457589/142857909-c24dd7f7-c5b5-4008-96c2-bc36c5b1677d.gif)  
+
+``` swift
+//구현 로직 설명
+
+디바이스 스캔시작/////////////////////////////////////////
+ centralManager.scanForPeripherals(withServices: nil) // 
+ ///////////////////////////////////////////////////////
+ .
+ .
+ .
+ 
+```
+
 Ble 스캔을 통해 디바이스를 검색하고 등록한다.
   
 ### 2. 디바이스 동작
