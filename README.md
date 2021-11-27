@@ -53,14 +53,16 @@
 
 ``` 
 ``` swift
-// 2. 응답패킷 수신 
+// 3. 응답패킷 수신 
  func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
         switch characteristic.uuid{
         
         case notiUUID:
             let string = String(data: characteristic.value ?? "error".data(using: .utf8)!,encoding: String.Encoding.utf8) ?? "error"
-            if string == "success"{
+            if string == "success"{ // 연결을 허용할 시
               registDB(peripheral) // DB 에 peripheral 디바이스의 ADV 패킷에서 전송한 디바이스 고유번호를 저장
+            }else{ // PIN 번호를 요구할 시
+              checkPin() // PIN 번호 전송 메소드 호출
             }
         default:
             print("Unhandled Charactistic UUID: \(characteristic.uuid)")
