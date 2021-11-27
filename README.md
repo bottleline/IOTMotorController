@@ -45,7 +45,7 @@
                 peripheral.setNotifyValue(true, for: charactistic) // notifiying 서비스를 구독하여 iot 기기에서 변경된 값을 감시
             }else if charactistic.uuid == writeUUID{
                 if !registDevice{
-                    peripheral.writeValue(deviceDataList![n].messege) // 응답을 요청하느 패킷 발송
+                    peripheral.writeValue(deviceDataList![n].messege) // 응답을 요청하는 패킷 발송
                 }
             }
       }
