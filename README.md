@@ -39,7 +39,20 @@
 ``` 
 ### 2
 ``` swift
- // 2. 디바이스 발견시 응답 패킷 요청 
+ // 1. 디바이스 발견시 연결 
+func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
+        if peripheral.name == "iotDevice"{
+            if let code = String(describing: advertisementData["kCBAdvDataManufacturerData"]){ // advertisment 패킷에 제조사 정보에 담긴 일련번호를 추출한다.
+                if checkCode(code){
+                  central.connect(peripheral,options:nil) // 일련번호를 확인후 연결한다
+                }
+            }
+        }
+    }
+
+``` 
+``` swift
+ // 2. 서비스 연결 후 응답 패킷 요청 
  func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
      guard let charactistics = service.characteristics else{return}
      if charactistic.uuid == notiUUID{
