@@ -103,6 +103,12 @@ mqtt.publish(Topic, messege)
 ![tars5-2](https://user-images.githubusercontent.com/42457589/142858122-3ee74cee-a324-4bfc-8caa-da52961f3f86.gif)  
 wifi hub를 ble 스캔하여 찾은후 등록한다.  
 hub 등록이 되면 hub를 통해 iot 기기와 스마트폰간 wifi 통신이 가능해진다
+
+## iot 제어 컨셉
+```
+![image](https://user-images.githubusercontent.com/42457589/143727332-6f544800-5fd6-4252-b008-c9ff088065e8.png)
+
+```
   
 ### 6. 바로가기 동작기능 구현
 ![tars6-1](https://user-images.githubusercontent.com/42457589/142858211-660d8ad1-f1ef-43d8-8a5c-ae1d96c2a7d2.gif)
