@@ -73,11 +73,14 @@ func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPerip
         switch characteristic.uuid{
         
         case notiUUID:
-            let string = String(data: characteristic.value ?? "error".data(using: .utf8)!,encoding: String.Encoding.utf8) ?? "error"
-            if string == "success"{ // 연결을 허용할 시
-              registDB(peripheral) // DB 에 peripheral 디바이스의 ADV 패킷에서 전송한 디바이스 고유번호를 저장
-            }else{ // PIN 번호를 요구할 시
-              checkPin() // PIN 번호 전송 메소드 호출
+            guard let s = characteristic.value else {return}
+            guard let sData = s.data(using: .utf8) else {return}
+            if let string = String(data: sData,encoding: String.Encoding.utf8){
+                if string == "success"{ // 연결을 허용할 시
+                  registDB(peripheral) // DB 에 peripheral 디바이스의 ADV 패킷에서 전송한 디바이스 고유번호를 저장
+                }else{ // PIN 번호를 요구할 시
+                  checkPin() // PIN 번호 전송 메소드 호출
+                }
             }
         default:
             print("Unhandled Charactistic UUID: \(characteristic.uuid)")
