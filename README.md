@@ -82,7 +82,16 @@ Ble 스캔을 통해 디바이스를 검색하고 등록한다.
 ### 3. 디바이스 이름 설정
 ![tars2](https://user-images.githubusercontent.com/42457589/142857940-f8f76369-46c6-4176-a7bd-ee9929f32f34.gif)  
 디바이스의 이름을 설정한다
-  
+# 단거리 동작
+``` swift
+// 단거리 : 블루투스 동작
+peripheral.writeValue(messege)
+```
+# 장거리 동작
+``` swift
+// 단거리 : 블루투스 동작
+mqtt.publish(Topic, messege)
+```
 ### 4. 디바이스 커스텀 동작 설정
 ![tars3](https://user-images.githubusercontent.com/42457589/142857978-4e463a15-39c0-4de6-8078-edbd56deca24.gif)  
 디바이스의 동작을 원하는대로 설정한다.
