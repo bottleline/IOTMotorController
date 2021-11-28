@@ -102,7 +102,7 @@ peripheral.writeValue(messege)
 # 장거리 동작
 ``` swift
 // 단거리 : 블루투스 동작
-mqtt.publish(Topic, messege)
+mqtt.publish(topic, messege)
 ```
   
     
